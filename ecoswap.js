@@ -1,6 +1,5 @@
 
 
-const products = 
     const products = [
     {
         id: 1,
@@ -397,7 +396,7 @@ const products =
     }
 ];
 
-//     [
+// const products = [
 //     {
 //         id: 1,
 //         title: "Refurbished iPhone 13 Pro",
