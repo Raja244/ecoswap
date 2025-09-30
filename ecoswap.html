@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSwap - Give Products a Second Life</title>
+    <link rel="stylesheet" href="ecoswap.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">EcoSwap</div>
+            
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for sustainable products..." />
+                <button class="search-btn" onclick="searchProducts()">🔍</button>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#sell">Start Selling</a></li>
+                <li><a href="#impact">Impact</a></li>
+            </ul>
+
+            <div class="user-actions">
+                <div class="cart-icon" onclick="openCart()">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <button onclick="openModal('loginModal')" style="background: var(--accent-orange); color: white; border: none; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600; cursor: pointer;">Login</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+
+<section class="hero">
+        <div class="hero-content fade-in">
+            <h1>Give Products a Second Life</h1>
+            <p>Join the sustainable revolution. Buy, sell, and refurbish eco-friendly products while making a positive impact on our planet.</p>
+            
+            <div class="impact-stats">
+                <div class="stat">
+                    <div class="stat-number" id="co2Saved">500</div>
+                    <div class="stat-label">Tons CO₂ Saved</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="productsSaved">100K+</div>
+                    <div class="stat-label">Products Saved</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="activeUsers">50K+</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="category-grid">
+            <div class="category-card" onclick="filterByCategory('electronics')">
+                <div class="category-icon">📱</div>
+                <h3>Electronics</h3>
+                <p>Refurbished phones, laptops, and gadgets with warranty</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('furniture')">
+                <div class="category-icon">🪑</div>
+                <h3>Furniture</h3>
+                <p>Upcycled and restored furniture for your home</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('fashion')">
+                <div class="category-icon">👗</div>
+                <h3>Fashion</h3>
+                <p>Vintage and sustainable clothing for every style</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('beauty')">
+                <div class="category-icon">🌿</div>
+                <h3>Beauty & Care</h3>
+                <p>Eco-friendly cosmetics and personal care products</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('garden')">
+                <div class="category-icon">🌱</div>
+                <h3>Garden & Outdoor</h3>
+                <p>Sustainable gardening tools and outdoor equipment</p>
+            </div>
+            <div class="category-card" onclick="filterByCategory('kids')">
+                <div class="category-icon">🧸</div>
+                <h3>Kids & Baby</h3>
+                <p>Safe, sustainable products for children</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <h2 class="section-title">Featured Sustainable Products</h2>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="how-it-works">
+        <h2 class="section-title">Why Choose EcoSwap?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">♻️</div>
+                <h3>Sustainability Certified</h3>
+                <p>Every product comes with a verified sustainability score and environmental impact report.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <h3>Professional Refurbishment</h3>
+                <p>Our expert partners restore products to like-new condition with full warranties.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Carbon-Neutral Shipping</h3>
+                <p>All deliveries are carbon-neutral, and we use 100% recyclable packaging materials.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>EcoCoins Rewards</h3>
+                <p>Earn points for every sustainable purchase and redeem them for discounts.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Community Driven</h3>
+                <p>Join a community of eco-conscious buyers and sellers making a real difference.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>DIY Learning Hub</h3>
+                <p>Access thousands of tutorials to repair, upcycle, and care for your products.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EcoSwap</h3>
+                <p>Making sustainable shopping accessible to everyone. Join us in creating a more circular economy.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Furniture</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Beauty</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">EcoRefurb</a></li>
+                    <li><a href="#">Sustainability Certification</a></li>
+                    <li><a href="#">Carbon Offset Program</a></li>
+                    <li><a href="#">Seller Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EcoSwap. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cartModal')">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-total" id="cartTotal">Total: $0.00</div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Welcome to EcoSwap</h2>
+            <div style="display: flex; gap: 1rem; margin: 2rem 0;">
+                <button class="checkout-btn" style="width: auto; flex: 1;" onclick="showMessage('Login functionality would redirect to authentication system')">Login</button>
+                <button class="checkout-btn" style="width: auto; flex: 1; background: var(--ocean-blue);" onclick="showMessage('Registration would create new user account')">Sign Up</button>
+            </div>
+            <p style="text-align: center; color: var(--gray-dark);">Join thousands of eco-conscious shoppers making a difference!</p>
+        </div>
+    </div>
+
+    <script src="ecoswap.js"></script>
+</body>
+</html>
+        
